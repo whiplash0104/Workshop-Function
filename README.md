@@ -39,15 +39,15 @@ https://user-images.githubusercontent.com/14284928/228682080-54806ccb-07a4-4c7d-
 
 4. Creación de grupo dinámico con el nombre **FunctionGroup** con las siguientes políticas
 
-´´´
-    Allow dynamic-group FunctionGroup to manage functions-family in tenancy
-    Allow dynamic-group FunctionGroup to use virtual-network-family in tenancy
-    Allow dynamic-group FunctionGroup to manage repos in tenancy
-    Allow dynamic-group FunctionGroup to inspect object-family in tenancy
-    Allow dynamic-group FunctionGroup to manage objects in tenancy
-    Allow dynamic-group FunctionGroup to manage autonomous-database-family in tenancy
-    Allow dynamic-group FunctionGroup to use ons-topics in tenancy
-´´´
+```
+Allow dynamic-group FunctionGroup to manage functions-family in tenancy
+Allow dynamic-group FunctionGroup to use virtual-network-family in tenancy
+Allow dynamic-group FunctionGroup to manage repos in tenancy
+Allow dynamic-group FunctionGroup to inspect object-family in tenancy
+Allow dynamic-group FunctionGroup to manage objects in tenancy
+Allow dynamic-group FunctionGroup to manage autonomous-database-family in tenancy
+Allow dynamic-group FunctionGroup to use ons-topics in tenancy
+```
 
 
 5. asddas
