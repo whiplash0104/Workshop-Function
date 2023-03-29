@@ -47,7 +47,7 @@ https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-
 
 
 
-5. Creación de políticas con el nombre **FunctionPolicies**, estas deben ir en el compartment root 
+5. Creación de políticas con el nombre **FunctionPolicies**, estas deben ir en el compartment **root** 
 
 ```
 Allow dynamic-group FunctionGroup to manage functions-family in tenancy
@@ -64,18 +64,28 @@ https://user-images.githubusercontent.com/14284928/228683128-d2e6f437-473d-4cdc-
 
 
 
-5. Creación de tópico con el nombre **FunctionTopic**. Dentro del tópico se debe crear una suscripción, definir en esta el correo de cada uno.
+5. Creación de tópico con el nombre **FunctionTopic** dentro del compartment **FunctionTest**. Una vez creado el tópico se debe crear una suscripción, definir en esta el correo de cada uno.
 Importante señalar que se debe aceptar la suscripción, esta llegará al correo
 
 https://user-images.githubusercontent.com/14284928/228685015-576493a1-7664-48f5-b986-dfaf0d069ae9.mov
+
 
 6. Copiar el OCID del topico, se utilizará más adelante
 
 https://user-images.githubusercontent.com/14284928/228685250-3844778c-b99e-4b89-8c14-d5f7c91275ea.mov
 
 
+7. Creación Autonomous Database dentro del compartment **FunctionTest** con los siguientes parámetros:
 
-7. asd
+```
+Display name: FunctionADBAlways
+Database name: functionadb
+Selecionar la opción "Always Free"
+Password: ClavE.012356,         La ',' va incluida en la password
+```
+
+https://user-images.githubusercontent.com/14284928/228686294-acce7ee2-2daf-4954-8456-9dbee344cabf.mov
+
 
 
 8. asd
