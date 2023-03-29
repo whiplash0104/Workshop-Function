@@ -78,7 +78,7 @@ https://user-images.githubusercontent.com/14284928/228685250-3844778c-b99e-4b89-
 7. Creación Autonomous Database dentro del compartment **FunctionTest** con los siguientes parámetros:
 
 ```
-Display name: FunctionADBAlways
+Display name: FunctionADB
 Database name: functionadb
 Selecionar la opción "Always Free"
 Password: ClavE.012356,         La ',' va incluida en la password
@@ -88,12 +88,63 @@ https://user-images.githubusercontent.com/14284928/228686294-acce7ee2-2daf-4954-
 
 
 
-8. asd
+8. Una vez creada la base de datos guardar OICD, Password y DBSVC
+
+Estos deberían ser del tipo:
+```
+DBSVC: functionadb_high
+DB_OCID: ocid1.autonomousdatabase.oc1.iad.XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+DBUSER: ADMIN
+DBPWD:  ClavE.012356,
+```
+
+https://user-images.githubusercontent.com/14284928/228686821-3446ac39-8fbe-417f-96b5-863a9b6e4cb1.mov
 
 
-9. asd
+9. Cración de token para usuario, llamarlo **FunctionToken** y guardarlo, este no se volverá a mostrar
+
+https://user-images.githubusercontent.com/14284928/228687211-79883498-5203-40a1-b352-8158a1844d32.mov
 
 
-10. as
-11. asd
-12. 
+10. Creación de la aplicación (llamarla **AppTest**) dentro del compartment **FunctionTest** usar la VCN **VCNFunction** y la subred **pública**
+
+https://user-images.githubusercontent.com/14284928/228687760-84778199-ce53-4ef1-92a2-b732a30eb0a6.mov
+
+
+
+11. Configuración de OCI cli (en caso de no estar instalado previamente)
+```
+$ sudo dnf install python36-oci-cli git ansible  -y
+$ oci setup config
+
+Enter a location for your config [/home/fbasso/.oci/config]:    **ENTER**
+
+```
+
+
+12. Instalación de docker (en caso de no estar instalado previamente). Estos pasos corresponden a sistema Oracle Linux
+
+```
+$ sudo yum install -y yum-utils
+$ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+$ sudo yum update
+$ sudo yum install docker-ce docker-ce-cli containerd.io -y
+$ sudo systemctl enable --now docker
+```
+
+13. Habilitar usuario para la ejecutar docker, cambiar **USUSARIO** por el personal
+```
+$ sudo chown USUARIO:docker /var/run/docker.sock
+```
+
+14. sda
+15. as
+16. as
+17. asd
+18. asd
+19. as
+20. dasd
+21. asd
+
+
+
