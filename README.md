@@ -117,8 +117,35 @@ https://user-images.githubusercontent.com/14284928/228687760-84778199-ce53-4ef1-
 $ sudo dnf install python36-oci-cli git ansible  -y
 $ oci setup config
 
-Enter a location for your config [/home/fbasso/.oci/config]:    **ENTER**
+Enter a location for your config [/home/fbasso/.oci/config]:          **ENTER**
+Enter a user OCID: ocid1.user.oc1..XXXXXXXXX                          **Pegar OCID de usuario**
+Enter a tenancy OCID: ocid1.tenancy.oc1..XXXXXX                       **Pegar OCID de tenant**
+Enter a region by index or name(e.g. ...                              **Selecionar la región que corresponde, en este caso us-ashburn-1**
+Do you want to generate a new API ....                                **ENTER**
+Enter a name for your key [oci_api_key]:                              **ENTER**
+Public key written to: /home/fbasso/.oci/oci_api_key_public.pem       **ENTER**
+Enter a passphrase for your private key (empty for no passphrase):    **ENTER**
+Private key written to: /home/fbasso/.oci/oci_api_key.pem             **ENTER**
+Fingerprint: 29:05:f7:6d:49:ce:91:e3:5e:3d:e3:74:5c:59:33:5b
+Config written to /home/fbasso/.oci/config
+...
+```
 
+
+https://user-images.githubusercontent.com/14284928/228689165-d81f73f2-8781-4767-b39d-ec9a5fb40117.mov
+
+
+Una vez definidos todos los puntos anteriores copiar la llave ssh, copiar la llave pública **oci_api_key_public.pem**  dentro de APÏ Keys del usuario en la opción ** Paste Public Key**, posterior a esto, validar fingerprints creados, deberían ser los mismos
+
+```
+$ cat .oci/oci_api_key_public.pem
+```
+
+https://user-images.githubusercontent.com/14284928/228689760-0e286acf-00d6-4904-a5bc-8e813e0973d5.mov
+
+Para testearla conexión listar Availability Domains
+```
+oci iam availability-domain list
 ```
 
 
@@ -137,8 +164,23 @@ $ sudo systemctl enable --now docker
 $ sudo chown USUARIO:docker /var/run/docker.sock
 ```
 
-14. sda
-15. as
+14. Instalar Function cli (fn). Referencia: https://fnproject.io/tutorials/install/
+
+```
+curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh
+```
+
+15. Configurar fn cli, reemplazar XXXX por los valores de cada uno
+```
+$ fn list context
+$ fn create context oci --provider oracle
+$ fn list context
+$ fn use context oci
+$ fn update context oracle.compartment-id ocid1.compartment.oc1..XXXXXXXXXXXXX    OCID de compartment
+$ fn update context api-url https://XXXXXXXX.oci.oraclecloud.com                  Validar dependiendo de cada región en https://docs.oracle.com/en-us/iaas/api/#/en/functions/20181201/
+$ fn list apps
+```
+
 16. as
 17. asd
 18. asd
