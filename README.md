@@ -37,7 +37,17 @@ https://user-images.githubusercontent.com/14284928/228681682-6075d0de-1227-451c-
 https://user-images.githubusercontent.com/14284928/228682080-54806ccb-07a4-4c7d-8ab4-3cb2ca32c705.mov
 
 
-4. Creación de grupo dinámico con el nombre **FunctionGroup** con las siguientes políticas
+4. Creación de grupo dinámico con el nombre **FunctionGroup** con la siguiente regla
+
+```
+ALL {resource.type = 'fnfunc'}
+```
+
+https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-825b-df364f230566.mov
+
+
+
+5. Creación de políticas con el nombre **FunctionPolicies**, estas deben ir en el compartment root 
 
 ```
 Allow dynamic-group FunctionGroup to manage functions-family in tenancy
@@ -50,4 +60,30 @@ Allow dynamic-group FunctionGroup to use ons-topics in tenancy
 ```
 
 
-5. asddas
+https://user-images.githubusercontent.com/14284928/228683128-d2e6f437-473d-4cdc-bf33-c9a12df88eb1.mov
+
+
+
+5. Creación de tópico con el nombre **FunctionTopic**. Dentro del tópico se debe crear una suscripción, definir en esta el correo de cada uno.
+Importante señalar que se debe aceptar la suscripción, esta llegará al correo
+
+https://user-images.githubusercontent.com/14284928/228685015-576493a1-7664-48f5-b986-dfaf0d069ae9.mov
+
+6. Copiar el OCID del topico, se utilizará más adelante
+
+https://user-images.githubusercontent.com/14284928/228685250-3844778c-b99e-4b89-8c14-d5f7c91275ea.mov
+
+
+
+7. asd
+
+
+8. asd
+
+
+9. asd
+
+
+10. as
+11. asd
+12. 
