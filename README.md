@@ -6,7 +6,8 @@
 - Cuenta de Github (https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
 - Poseer servidor linux con las siguientes dependencias instaladas:
   - git
-  - python36-oci-cli 
+  - python36-oci-cli
+  - fn 
 
 ### ¿Qué vamos a hacer?
 Todo el código está en https://github.com/whiplash0104/Workshop-Function
@@ -185,7 +186,7 @@ $ git clone https://github.com/whiplash0104/Workshop-Function.git
 https://user-images.githubusercontent.com/14284928/228693614-da10593d-759e-4845-bd78-95cac2b95570.mov
 
 
-17. Modificar los siguientes parámetros del archivo **func.yaml**:
+17. Modificar los siguientes parámetros del archivo **func.yaml** dentro del directorio Workshop-Function:
 ```
   TOPIC_OCID: ocid1.onstopic.oc1.iad.XXXXXXXXXXXXXXXX
   ADB_OCID: ocid1.autonomousdatabase.oc1.iad.XXXXXXXX
@@ -216,10 +217,22 @@ REGISTRY_URL:     Viene en base a la región https://docs.oracle.com/en-us/iaas/
 https://user-images.githubusercontent.com/14284928/228696297-7621d96b-2622-4957-8b9f-e41c8d597166.mov
 
 
-20. Deploy de aplicación
+20. Deploy de aplicación, ejecutar comando desde el directorio Workshop-Function
+```
+$ cd Workshop-Function
+$ fn update context registry REGISTRY_URL/NAMESPACE
+$ fn -v deploy --app apptest
 ```
 
+Esta tarea tarde aproximadamente 4 minutos, denemos esperar el mensaje
 ```
+...
+f46abc7ec396: Layer already exists
+0.0.125: digest: sha256:6f848be04f6b7db8064c437f8907ebe4e9e446a0f8ebef5437b61dc41a2329e5 size: 1782
+Updating function apptest using image iad.ocir.io/id5xe8my93ee/apptest:0.0.125...
+Successfully created function: apptest with iad.ocir.io/id5xe8my93ee/apptest:0.0.125
+```
+
 
 21. asd
 
