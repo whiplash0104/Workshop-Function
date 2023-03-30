@@ -269,8 +269,20 @@ Function: apptest
 ```
 <img width="737" alt="image" src="https://user-images.githubusercontent.com/14284928/228702179-ac77b704-508e-4f70-8880-5eb928083d6a.png">
 
+```
+Rule Logic
+MATCH event WHERE (
+	eventType EQUALS ANY OF (
+		com.oraclecloud.objectstorage.createobject
+	)
+AND (
+	bucketName MATCHES ANY OF (
+		functionBucket
+		)
+	)
+)
+```
 https://user-images.githubusercontent.com/14284928/228702784-e02325ef-0a3f-457d-b152-e4b16dec94e6.mov
-
 
 23. das
 
