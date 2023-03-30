@@ -240,9 +240,37 @@ Desde Developer Services > Functions > Applications > apptest (dentro del compar
 https://user-images.githubusercontent.com/14284928/228701232-2850b40f-f812-4cb7-aece-601c22c5e2c6.mov
 
 
-21. asd
+21. Creación de Bucket con el nombre **functionBucket** dentro del compartment **FunctionTest**  
+**Se debe habilitar la opción emisión de eventos (Emit Object Events)**
+https://user-images.githubusercontent.com/14284928/228701649-557f3487-6958-4bd4-aae9-6305df4f8915.mov
 
-22. asdsda
+
+22. Configuración de regla para Event Service dentro del compartment **FunctionTest** 
+En este punto se crea la regla para que cada vez que se cargue un archivo dentro del bucket se gatillará la ejecución de la aplicación
+```
+Display Name: FunctionEvent
+Condition: Event Type
+Service Name: Objetc Storage
+Event Type: Object - Create
+```
++ Another Condition
+```
+Condition: attribute
+Attribute Name: bucketName
+Attribute Values: functionBucket
+```
+
+Action
+```
+Action Type: Functions
+Function Compartment: FunctionTest
+Function Application: apptest
+Function: apptest
+```
+<img width="737" alt="image" src="https://user-images.githubusercontent.com/14284928/228702179-ac77b704-508e-4f70-8880-5eb928083d6a.png">
+
+https://user-images.githubusercontent.com/14284928/228702784-e02325ef-0a3f-457d-b152-e4b16dec94e6.mov
+
 
 23. das
 
