@@ -275,9 +275,9 @@ MATCH event WHERE (
 	eventType EQUALS ANY OF (
 		com.oraclecloud.objectstorage.createobject
 	)
-AND (
-	bucketName MATCHES ANY OF (
-		functionBucket
+	AND (
+		bucketName MATCHES ANY OF (
+			functionBucket
 		)
 	)
 )
