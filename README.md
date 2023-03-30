@@ -233,6 +233,12 @@ Updating function apptest using image iad.ocir.io/id5xe8my93ee/apptest:0.0.125..
 Successfully created function: apptest with iad.ocir.io/id5xe8my93ee/apptest:0.0.125
 ```
 
+https://user-images.githubusercontent.com/14284928/228701223-24e430fb-ba18-44ef-be82-ced0294dc15e.mov
+
+Desde Developer Services > Functions > Applications > apptest (dentro del compartment **FunctionTest**) se podrá ver el detalle de la función. Habilitar el loggin desde la opción Logs 
+
+https://user-images.githubusercontent.com/14284928/228701232-2850b40f-f812-4cb7-aece-601c22c5e2c6.mov
+
 
 21. asd
 
