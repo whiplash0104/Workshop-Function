@@ -9,21 +9,15 @@
   - python36-oci-cli 
 
 ### ¿Qué vamos a hacer?
-saddasasd
+Todo el código está en https://github.com/whiplash0104/Workshop-Function
 
 
 ### Paso a Paso
 
-0. Crear Cuenta en git, usuar correo empresarial o personal (github.com)
+1. Crear Cuenta en git, usuar correo empresarial o personal (github.com)
 
 
 https://user-images.githubusercontent.com/14284928/219779574-ad656998-a63d-402a-87cd-b9658c84e401.mov
-
-
-1. Clonar git en servidor linux
-
-
-https://user-images.githubusercontent.com/14284928/228680988-aacf437d-e9bd-4cf2-9558-ee82b494db6f.mov
 
 
 2. Creación de compartment con el nombre **FunctionTest**
@@ -161,7 +155,7 @@ $ sudo systemctl enable --now docker
 
 13. Habilitar usuario para la ejecutar docker, cambiar **USUSARIO** por el personal
 ```
-$ sudo chown USUARIO:docker /var/run/docker.sock
+$ sudo usermod -aG docker USUSARIO
 ```
 
 14. Instalar Function cli (fn). Referencia: https://fnproject.io/tutorials/install/
@@ -180,13 +174,63 @@ $ fn update context oracle.compartment-id ocid1.compartment.oc1..XXXXXXXXXXXXX  
 $ fn update context api-url https://XXXXXXXX.oci.oraclecloud.com                  Validar dependiendo de cada región en https://docs.oracle.com/en-us/iaas/api/#/en/functions/20181201/
 $ fn list apps
 ```
+https://user-images.githubusercontent.com/14284928/228692363-17c406d2-ace9-4a06-b6cf-d9764aeace0f.mov
 
-16. as
-17. asd
-18. asd
-19. as
-20. dasd
+
+16. Clonar repositorio git git@github.com:whiplash0104/Workshop-Function.git
+
+```
+$ git clone https://github.com/whiplash0104/Workshop-Function.git
+```
+https://user-images.githubusercontent.com/14284928/228693614-da10593d-759e-4845-bd78-95cac2b95570.mov
+
+
+17. Modificar los siguientes parámetros del archivo **func.yaml**:
+```
+  TOPIC_OCID: ocid1.onstopic.oc1.iad.XXXXXXXXXXXXXXXX
+  ADB_OCID: ocid1.autonomousdatabase.oc1.iad.XXXXXXXX
+  COMPANY: XXXXXXX
+  DBPWD: XXXXXXXX
+  DBSVC: XXXXXXX_high
+```
+Estos parámetros fueron almacenados durante los pasos 5, 7 y 8
+
+https://user-images.githubusercontent.com/14284928/228694241-6e29edd5-a76e-408b-b571-7969560dc49f.mov
+
+
+18. Creación de registry con el nombre **apptest** dentro del compartment **FunctionTest**
+
+https://user-images.githubusercontent.com/14284928/228694517-62f99cfa-4db6-46c5-bc65-45c0c2e0f257.mov
+
+
+19. Login de docker a registry recién creado
+```
+$ docker login  -u 'NAMESPACE/USUARIO' -p 'TOKEN'  REGISTRY_URL
+
+Donde:
+NAMESPACE:        Es el namespace donde fue creado el registry
+USUARIO:          Es el usuario de OCI
+TOKEN:            Es el token que se creó en el paso 9
+REGISTRY_URL:     Viene en base a la región https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm ej: gru.ocir.io
+```
+https://user-images.githubusercontent.com/14284928/228696297-7621d96b-2622-4957-8b9f-e41c8d597166.mov
+
+
+20. Deploy de aplicación
+```
+
+```
+
 21. asd
 
+22. asdsda
+
+23. das
+
+24. d
+
+25. a
+
+26. das
 
 
