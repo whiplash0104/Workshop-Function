@@ -32,10 +32,13 @@ https://user-images.githubusercontent.com/14284928/228681682-6075d0de-1227-451c-
 https://user-images.githubusercontent.com/14284928/228682080-54806ccb-07a4-4c7d-8ab4-3cb2ca32c705.mov
 
 
-4. Creación de grupo dinámico con el nombre **FunctionGroup** con la siguiente regla
-
+4. Creación de grupo dinámico con el nombre **FunctionGroup** 
 ```
-ALL {resource.type = 'fnfunc'}
+Menu principal > Identity & Security > Dynamic Groups > Create Dynamic Group
+
+Name: FunctionGroup
+Description: Grupo funciones
+Rule 1: ALL {resource.type = 'fnfunc'}
 ```
 
 https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-825b-df364f230566.mov
@@ -45,6 +48,12 @@ https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-
 5. Creación de políticas con el nombre **FunctionPolicies**, estas deben ir en el compartment **root** 
 
 ```
+Menu principal > Identity & Security > Policies
+
+Name: FunctionPolicies
+Description: FunctionGroup Policies
+Policy Builder:  Seleciconar Show manual editor y pegar las siguientes reglas
+
 Allow dynamic-group FunctionGroup to manage functions-family in tenancy
 Allow dynamic-group FunctionGroup to use virtual-network-family in tenancy
 Allow dynamic-group FunctionGroup to manage repos in tenancy
@@ -54,18 +63,33 @@ Allow dynamic-group FunctionGroup to manage autonomous-database-family in tenanc
 Allow dynamic-group FunctionGroup to use ons-topics in tenancy
 ```
 
+<img width="410" alt="image" src="https://user-images.githubusercontent.com/14284928/229537938-ed102020-f234-4acd-bd55-00617dc08786.png">
 
 https://user-images.githubusercontent.com/14284928/228683128-d2e6f437-473d-4cdc-bf33-c9a12df88eb1.mov
 
 
 
 5. Creación de tópico con el nombre **FunctionTopic** dentro del compartment **FunctionTest**. Una vez creado el tópico se debe crear una suscripción, definir en esta el correo de cada uno.
+```
+Menú Principal > Developer Services > Notifications > Create Topic
+
+Name: FunctionTopic	
+```
+
+Dentro del tópico hacer click en Create Subscription
+```
+Protocol: Email
+Email: usuario@correo.dominio
+```
+<img width="593" alt="image" src="https://user-images.githubusercontent.com/14284928/229538763-8e2153f6-a4e4-4e7a-961f-c17c008d75b1.png">
+
 Importante señalar que se debe aceptar la suscripción, esta llegará al correo
 
 https://user-images.githubusercontent.com/14284928/228685015-576493a1-7664-48f5-b986-dfaf0d069ae9.mov
 
 
-6. Copiar el OCID del topico, se utilizará más adelante
+6. Copiar el OCID del topico y almacenarlo en un archivo de texto, se utilizará más adelante
+<img width="269" alt="image" src="https://user-images.githubusercontent.com/14284928/229539039-8b5fb2da-3c89-4607-8afe-d36e7487c5b9.png">
 
 https://user-images.githubusercontent.com/14284928/228685250-3844778c-b99e-4b89-8c14-d5f7c91275ea.mov
 
@@ -96,12 +120,24 @@ DBPWD:  ClavE.012356,
 https://user-images.githubusercontent.com/14284928/228686821-3446ac39-8fbe-417f-96b5-863a9b6e4cb1.mov
 
 
-9. Cración de token para usuario, llamarlo **FunctionToken** y guardarlo, este no se volverá a mostrar
+9. Cración de token para usuario, llamarlo **FunctionToken** y guardarlo en un archivo de texto, este no se volverá a mostrar
+```
+User Setins > Auth Tokens > Generate Token 
+Name: FunctionToken
+```
+<img width="255" alt="image" src="https://user-images.githubusercontent.com/14284928/229539693-fce81684-e3a3-43c8-86ce-27e838fd96a9.png">
+
 
 https://user-images.githubusercontent.com/14284928/228687211-79883498-5203-40a1-b352-8158a1844d32.mov
 
 
 10. Creación de la aplicación (llamarla **AppTest**) dentro del compartment **FunctionTest** usar la VCN **VCNFunction** y la subred **pública**
+```
+Menú Principal > Developer Services > Function > Applications > Create Application
+Name: apptest
+```
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/14284928/229540208-557cd702-1bc9-441f-be38-39537a84be88.png">
+
 
 https://user-images.githubusercontent.com/14284928/228687760-84778199-ce53-4ef1-92a2-b732a30eb0a6.mov
 
@@ -134,7 +170,10 @@ Una vez definidos todos los puntos anteriores copiar la llave ssh, copiar la lla
 
 ```
 $ cat .oci/oci_api_key_public.pem
+User Setins > API Keys > Add API Key > Paste Public Key
 ```
+<img width="516" alt="image" src="https://user-images.githubusercontent.com/14284928/229540759-afdeda3f-dae4-44bb-a0fc-1179262ce222.png">
+
 
 https://user-images.githubusercontent.com/14284928/228689760-0e286acf-00d6-4904-a5bc-8e813e0973d5.mov
 
@@ -200,6 +239,12 @@ https://user-images.githubusercontent.com/14284928/228694241-6e29edd5-a76e-408b-
 
 
 18. Creación de registry con el nombre **apptest** dentro del compartment **FunctionTest**
+```
+Menú Principal > Developer Services > Containers & Artifacts > Container Registry > Create Repository
+Compartment: FunctionTest
+Repository name: apptest
+Access: Private
+```
 
 https://user-images.githubusercontent.com/14284928/228694517-62f99cfa-4db6-46c5-bc65-45c0c2e0f257.mov
 
