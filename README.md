@@ -330,6 +330,8 @@ MATCH event WHERE (
 https://user-images.githubusercontent.com/14284928/228702784-e02325ef-0a3f-457d-b152-e4b16dec94e6.mov
 
 23. Para probar la función
+Descargar archivo cvs: https://objectstorage.us-ashburn-1.oraclecloud.com/p/MSmBkReA-TET1pfUpsvX5ZsC6uTFZpU140p7t7uitURUJ9hwOKOI0z0O5mn7stXJ/n/idikzonisftg/b/DataFile/o/Employees.csv
+
 Cargar el archivo csv dentro del bucket creado
 Esperar la ejecución de la fn (la primera carga tarda un tiempo aproximado de 40 segundos, posterior a ello la ejecución tarda 3 segundos)
 Ir a la base de datos, en Database Action ir al motor SQL y ejecutar la siguiente consulta
