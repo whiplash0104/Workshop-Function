@@ -284,12 +284,16 @@ MATCH event WHERE (
 ```
 https://user-images.githubusercontent.com/14284928/228702784-e02325ef-0a3f-457d-b152-e4b16dec94e6.mov
 
-23. das
+23. Para probar la función
+Cargar el archivo csv dentro del bucket creado
+Esperar la ejecución de la fn (la primera carga tarda un tiempo aproximado de 40 segundos, posterior a ello la ejecución tarda 3 segundos)
+Ir a la base de datos, en Database Action ir al motor SQL y ejecutar la siguiente consulta
+```
+SELECT * FROM LOAD_TABLE;
+```
+https://user-images.githubusercontent.com/14284928/229536037-706fe2fa-802f-45ad-83df-10dfb6579601.mov
 
-24. d
 
-25. a
+24. Si la carga se ejecutó de forma correcta además de ver los datos cargados en la DB debería llegar un correo similar al siguiente:
+<img width="554" alt="image" src="https://user-images.githubusercontent.com/14284928/229536266-b214dbef-035a-431e-9725-54c8126b8e6e.png">
 
-26. das
-
- 
