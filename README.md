@@ -135,6 +135,8 @@ https://user-images.githubusercontent.com/14284928/228687211-79883498-5203-40a1-
 ```
 Menú Principal > Developer Services > Function > Applications > Create Application
 Name: apptest
+VCN in Function: VCNFunction
+subnets in Function: Public Subnet-VCNFunction
 ```
 <img width="415" alt="image" src="https://user-images.githubusercontent.com/14284928/229540208-557cd702-1bc9-441f-be38-39537a84be88.png">
 
