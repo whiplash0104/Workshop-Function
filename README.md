@@ -131,7 +131,7 @@ Name: FunctionToken
 https://user-images.githubusercontent.com/14284928/228687211-79883498-5203-40a1-b352-8158a1844d32.mov
 
 
-10. Creación de la aplicación (llamarla **AppTest**) dentro del compartment **FunctionTest** usar la VCN **VCNFunction** y la subred **pública**
+10. Creación de la aplicación (llamarla **apptest**) dentro del compartment **FunctionTest** usar la VCN **VCNFunction** y la subred **pública**
 ```
 Menú Principal > Developer Services > Function > Applications > Create Application
 Name: apptest
