@@ -248,7 +248,11 @@ https://user-images.githubusercontent.com/14284928/228701232-2850b40f-f812-4cb7-
 17. Creación de Bucket con el nombre **functionBucket** dentro del compartment **FunctionTest**  
 **Se debe habilitar la opción emisión de eventos (Emit Object Events)**
 
-https://user-images.githubusercontent.com/14284928/228701649-557f3487-6958-4bd4-aae9-6305df4f8915.mov
+
+
+
+https://user-images.githubusercontent.com/14284928/234388809-7d5f617d-4319-4f11-8941-9527282aecee.mov
+
 
 
 18. Configuración de regla para Event Service dentro del compartment **FunctionTest** 
