@@ -45,6 +45,38 @@ https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-
 
 
 
+## En caso de ser una cuenta free la opción de Dynamic Groups está en:
+```
+Identity & Security > Domains  
+```
+<img width="958" alt="image" src="https://user-images.githubusercontent.com/14284928/234876396-b18e95d5-9509-494a-bd78-455d3cc7240f.png">
+
+```
+Selecionar el Domain Default (Dentro del compartmente FunctionTest)
+```
+<img width="951" alt="image" src="https://user-images.githubusercontent.com/14284928/234876856-bb4b61b2-bebf-4aac-a874-b5c163a0b290.png">
+
+<img width="953" alt="image" src="https://user-images.githubusercontent.com/14284928/234877110-643f6387-6ae2-470f-9410-0c00567cf38d.png">
+
+```
+Dentro del domain Default, seleccionar Dynamic groups
+```
+<img width="880" alt="image" src="https://user-images.githubusercontent.com/14284928/234877423-696dfcf8-42ef-4da1-b131-659f8bd556b0.png">
+
+```
+Click en Create dynamic group
+```
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/14284928/234877905-37881b21-1161-4f7c-a683-1111a2d99d8d.png">
+
+Crear el grupo con los siguientes datos
+```
+Name: FunctionGroup
+Description: Grupo funciones
+Rule 1: ALL {resource.type = 'fnfunc'}
+```
+<img width="689" alt="image" src="https://user-images.githubusercontent.com/14284928/234878705-c87b287b-1247-4404-8881-6239298f0894.png">
+
+
 5. Creación de políticas con el nombre **FunctionPolicies**, estas deben ir en el compartment **root** 
 
 ```
