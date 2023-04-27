@@ -45,7 +45,7 @@ https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-
 
 
 
-## En caso de ser una cuenta free la opción de Dynamic Groups está en:
+### En caso de ser una cuenta free la opción de Dynamic Groups está en:
 ```
 Identity & Security > Domains  
 ```
