@@ -179,7 +179,7 @@ Login dentro del repositorio
 	NAMESPACE:        Es el namespace donde fue creado el registry
 	USUARIO:          Es el usuario de OCI
 	TOKEN:            Es el token que se creó en el paso 9
-	REGISTRY_URL:     Viene en base a la región https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm ej: gru.ocir.io
+	REGISTRY_URL:     buscarlo en https://docs.oracle.com/es-ww/iaas/Content/Registry/Concepts/registryprerequisites.htm y copiarlo sin "https://" ej: si la región en brasil y el registry es https://gru.ocir.io definir solo gru.ocir.io
 
 Listar aplicaciones existentes
 	fn list apps
