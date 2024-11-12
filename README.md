@@ -123,6 +123,8 @@ https://user-images.githubusercontent.com/14284928/228685250-3844778c-b99e-4b89-
 7. Creación Autonomous Database dentro del compartment **FunctionTest** con los siguientes parámetros:
 
 ```
+Menú Principal > Oracle Databases > Autonomous Database > Create Autonomous Database 
+
 Display name: FunctionADB
 Database name: functionadb
 Selecionar la opción "Always Free"
