@@ -97,7 +97,7 @@ https://user-images.githubusercontent.com/14284928/228683128-d2e6f437-473d-4cdc-
 
 5. Creación de tópico con el nombre **FunctionTopic** dentro del compartment **FunctionTest**. Una vez creado el tópico se debe crear una suscripción, definir en esta el correo de cada uno.
 ```
-Menú Principal > Developer Services > Notifications > Create Topic
+Menú Principal > Developer Services > Aplication Integration > Notifications > Create Topic
 
 Name: FunctionTopic	
 ```
