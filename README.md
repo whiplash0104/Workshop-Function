@@ -43,10 +43,10 @@ Rule 1: ALL {resource.type = 'fnfunc'}
 
 https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-825b-df364f230566.mov
 
-```
+
 <img width="958" alt="image" src="https://user-images.githubusercontent.com/14284928/234876396-b18e95d5-9509-494a-bd78-455d3cc7240f.png">
 
-```
+
 Selecionar el Domain Default (Dentro del compartmente FunctionTest)
 ```
 <img width="951" alt="image" src="https://user-images.githubusercontent.com/14284928/234876856-bb4b61b2-bebf-4aac-a874-b5c163a0b290.png">
