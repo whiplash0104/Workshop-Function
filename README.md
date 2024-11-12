@@ -34,7 +34,7 @@ https://user-images.githubusercontent.com/14284928/228682080-54806ccb-07a4-4c7d-
 
 4. Creación de grupo dinámico con el nombre **FunctionGroup** 
 ```
-Menu principal > Identity & Security > Dynamic Groups > Create Dynamic Group
+Menu principal > Identity & Security > Domains
 
 Name: FunctionGroup
 Description: Grupo funciones
@@ -43,11 +43,6 @@ Rule 1: ALL {resource.type = 'fnfunc'}
 
 https://user-images.githubusercontent.com/14284928/228682912-9d82ec85-b83e-45f2-825b-df364f230566.mov
 
-
-
-### En caso de ser una cuenta free la opción de Dynamic Groups está en:
-```
-Identity & Security > Domains  
 ```
 <img width="958" alt="image" src="https://user-images.githubusercontent.com/14284928/234876396-b18e95d5-9509-494a-bd78-455d3cc7240f.png">
 
