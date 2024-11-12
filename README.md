@@ -22,10 +22,15 @@ https://user-images.githubusercontent.com/14284928/219779574-ad656998-a63d-402a-
 
 
 2. Creación de compartment con el nombre **FunctionTest**
+```
+Menú Principal > Identity & Security > Compartments > Create Compartment
 
+Una vez creado el compartmente, guardar el compartment OCID
+
+```
 https://user-images.githubusercontent.com/14284928/228681682-6075d0de-1227-451c-a74a-74c880238f47.mov
 
-
+<img width="801" alt="image" src="https://github.com/user-attachments/assets/b538a464-a113-4548-8937-7d5d16dfd0eb">
 
 3. Creación de VCN con el nombre **VCNFunction** dentro del compartment **FunctionTest** recién creado
 
@@ -128,6 +133,8 @@ Menú Principal > Oracle Databases > Autonomous Database > Create Autonomous Dat
 Display name: FunctionADB
 Database name: functionadb
 Selecionar la opción "Always Free"
+Choose database version: 19c
+
 Password: ClavE.012356,         La ',' va incluida en la password
 ```
 
@@ -159,7 +166,22 @@ Name: FunctionToken
 https://user-images.githubusercontent.com/14284928/228687211-79883498-5203-40a1-b352-8158a1844d32.mov
 
 
-10. Creación de la aplicación (llamarla **apptest**) dentro del compartment **FunctionTest** usar la VCN **VCNFunction** y la subred **pública**
+10. Creación de registry con el nombre **apptest** dentro del compartment **FunctionTest**
+```
+Menú Principal > Developer Services > Containers & Artifacts > Container Registry > Create Repository
+Compartment: FunctionTest
+Repository name: apptest
+Access: Private
+```
+
+https://user-images.githubusercontent.com/14284928/228694517-62f99cfa-4db6-46c5-bc65-45c0c2e0f257.mov
+
+Un vez creado el reguistry, copiar el **namespace**, según se indica en la imágen
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/24491c5f-6e48-49ca-89a6-30e69b130e1a">
+
+
+11. Creación de la aplicación (llamarla **apptest**) dentro del compartment **FunctionTest** usar la VCN **VCNFunction** y la subred **pública**
 ```
 Menú Principal > Developer Services > Function > Applications > Create Application
 Name: apptest
@@ -170,17 +192,6 @@ subnets in Function: Public Subnet-VCNFunction
 
 
 https://user-images.githubusercontent.com/14284928/228687760-84778199-ce53-4ef1-92a2-b732a30eb0a6.mov
-
-
-11. Creación de registry con el nombre **apptest** dentro del compartment **FunctionTest**
-```
-Menú Principal > Developer Services > Containers & Artifacts > Container Registry > Create Repository
-Compartment: FunctionTest
-Repository name: apptest
-Access: Private
-```
-
-https://user-images.githubusercontent.com/14284928/228694517-62f99cfa-4db6-46c5-bc65-45c0c2e0f257.mov
 
 
 12. Configurar fn cli, según lo indicado al momento de la creación de la función
@@ -198,7 +209,7 @@ Configurar la región dentro del context de fn (XX-XXXXXX-X Es la región a la q
 Configurar compartment dentro del context de fn (ocid1.compartment.oc1.XXX Es el compartmente)
 	fn update context oracle.compartment-id ocid1.compartment.oc1.XXX
 Configurar el registry (NAMESPACE Es el namespace donde fue creado el registry)
-	fn update context registry iad.ocir.io/NAMESPACE_PERSONAL/apptest
+	fn update context registry iad.ocir.io/NAMESPACE_PERSONAL
 
 Login dentro del repositorio
 	docker login  -u 'NAMESPACE/USUARIO' -p 'TOKEN'  REGISTRY_URL
@@ -286,6 +297,8 @@ https://user-images.githubusercontent.com/14284928/234388809-7d5f617d-4319-4f11-
 18. Configuración de regla para Event Service dentro del compartment **FunctionTest** 
 En este punto se crea la regla para que cada vez que se cargue un archivo dentro del bucket se gatillará la ejecución de la aplicación
 ```
+Menú Principal > Observability & Management > Event Service Rule > Create Rule
+
 Display Name: FunctionEvent
 Condition: Event Type
 Service Name: Objetc Storage
@@ -323,7 +336,7 @@ MATCH event WHERE (
 https://user-images.githubusercontent.com/14284928/228702784-e02325ef-0a3f-457d-b152-e4b16dec94e6.mov
 
 19. Para probar la función
-Descargar archivo cvs:  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaN9ZBIG2i78C384vDler3iZTVjAfcmTmNT8RTIjUTYCLyGRten-knJpspViZwzZ/n/idikzonisftg/b/test/o/Employees.csv
+Descargar archivo cvs:  https://objectstorage.us-ashburn-1.oraclecloud.com/p/QUHDFksSifmPGSt2UkIzZWx33dMvrBhGqc2d9gr2AxhciePIzEDEnBqcKA-JKsWO/n/id2etrjqvjlz/b/bucket-20241112-1820/o/Employees.csv
 
 Cargar el archivo csv dentro del bucket creado
 Esperar la ejecución de la fn (la primera carga tarda un tiempo aproximado de 40 segundos, posterior a ello la ejecución tarda 3 segundos)
