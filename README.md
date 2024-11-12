@@ -133,7 +133,7 @@ Menú Principal > Oracle Databases > Autonomous Database > Create Autonomous Dat
 Display name: FunctionADB
 Database name: functionadb
 Selecionar la opción "Always Free"
-Choose database version: 19c
+Choose database version: 23ai
 
 Password: ClavE.012356,         La ',' va incluida en la password
 ```
